@@ -72,3 +72,5 @@ Use the [n8n Chat Trigger](/integrations/builtin/core-nodes/n8n-nodes-langchain.
 ### Chatbot widget
 
 n8n provides a chatbot widget that you can use as a frontend for AI-powered chat workflows. Refer to the [@n8n/chat npm page](https://www.npmjs.com/package/@n8n/chat) for usage information.
+
+- [AI Workflow Builder](ai-workflow-builder.md): Create workflows using natural language.

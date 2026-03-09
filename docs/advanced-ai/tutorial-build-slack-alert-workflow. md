@@ -1,0 +1,99 @@
+---
+title: Build a Slack alert workflow using AI
+description: Learn how to create a Slack notification workflow using the AI Workflow Builder.
+---
+
+# Build a Slack alert workflow using AI
+
+This tutorial shows how to use the AI Workflow Builder to generate a workflow that sends a Slack message when a new GitHub issue is created.
+
+By the end of this tutorial, you will have a workflow that:
+
+1. Detects new GitHub issues
+2. Extracts issue information
+3. Sends a Slack notification
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- An n8n instance
+- A configured GitHub account
+- A Slack workspace
+- Credentials set up for GitHub and Slack in n8n
+
+## Step 1: Open the AI Workflow Builder
+
+1. Open the **n8n editor**.
+2. Create a new workflow.
+3. Click **Build with AI** in the editor toolbar.
+
+The AI builder panel opens where you can describe the workflow you want to create.
+
+## Step 2: Describe the workflow
+
+Enter the following prompt in the builder:
+Create a workflow that triggers when a new GitHub issue is opened and sends a Slack message containing the issue title and URL.
+
+The AI builder will:
+
+- Add a **GitHub Trigger** node
+- Add a **Slack** node
+- Connect the nodes together
+- Map basic fields such as issue title and link
+
+## Step 3: Review the generated workflow
+
+Once the workflow is generated:
+
+1. Inspect the nodes created by the builder.
+2. Verify the connections between nodes.
+3. Check that the issue title and URL are mapped correctly.
+
+You may need to configure credentials for the nodes.
+
+## Step 4: Configure credentials
+
+Open each node and configure the required credentials:
+
+### GitHub Trigger
+
+- Select your GitHub credentials
+- Choose the repository you want to monitor
+
+### Slack
+
+- Select your Slack credentials
+- Choose the channel where alerts should be sent
+
+Example message template:
+New GitHub Issue: {{$json["title"]}}
+{{$json["html_url"]}}
+
+## Step 5: Test the workflow
+
+1. Activate the workflow.
+2. Create a new issue in the selected GitHub repository.
+3. Confirm that a message appears in your Slack channel.
+
+## Step 6: Refine the workflow using AI
+
+You can refine the workflow by asking the builder to modify it.
+
+Example prompts:
+
+Add a filter so that Slack messages are only sent for issues labeled "bug".
+
+or
+
+Format the Slack message to include the issue author.
+
+The AI builder will update the workflow accordingly.
+
+## Next steps
+
+You can extend this workflow by:
+
+- Adding error handling
+- Sending alerts to multiple channels
+- Storing issue data in a database
